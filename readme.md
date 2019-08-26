@@ -12,32 +12,13 @@ Ahora que se ha creado la aplicación tenemos que registrarla en el proyecto de 
 
 Abre el fichero de ajustes del proyecto settings.py (se encuentra dentro de la subcarpeta con el mismo nombre que nuestro proyecto) y encuentra la definición de la lista INSTALLED_APPS. Añade a continuación una nueva linea al final de la lista. 
 
-Por ejemplo, si nuestra aplicación se llamase 'productos' deberíamos añadir la siguiente línea: <strong>'productos.apps.ProductosConfig'</strong> 
+Por ejemplo, si nuestra aplicación se llamase 'productos' deberíamos añadir 'productos' al final de la lista INSTALLED_APPS. 
 (No te olvides de la coma al final de la línea)
-
-<h2>Conectar el mapeador URL</h2>
-El sitio web se crea con un fichero mapeador de URLs (urls.py) en la carpeta del proyecto. Aunque puedes usar este fichero para gestionar todos tus mapeos URL, es más usual deferir los mapeos a su aplicación asociada.
-
-Algo así: 
-
-"""""
-from django.contrib import admin
-from django.urls import path, include
-
- <!-- from datos.urls import router -->
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1.0/', include('datos.urls')),
-]
-
-"""""
-
-Dónde aparece 'datos.urls' cambiarías datos por el nombre de tu aplicación
 
 
 <h3>Y se acabó</h3>
 Hasta aquí ya tendríamos nuestro proyecto, aunque vacío, operativo. 
+La podemos iniciar con <strong>python manage.py runserver</strong> lo cual nos dará la dirección en local de nuestro proyecto. 
 El resto sería crear nuestros modelos para dar forma a nuestra api y darle una vista ya sea siguiente con Django o, como hice yo mismo, conectandola con Vue. 
 
 Aquí les dejo un tutorial que me ayudó a darle algo de forma: https://www.youtube.com/watch?v=uu98pqiUJU8&list=PLEsfXFp6DpzTD1BD1aWNxS2Ep06vIkaeW&index=1 
